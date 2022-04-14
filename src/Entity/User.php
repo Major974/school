@@ -17,9 +17,9 @@ use Symfony\Component\Serializer\Annotation\Groups;
 #[ApiResource(normalizationContext:['groups' => ['read_User', 'read_Study', 'read_Professor', 'read_Director']], denormalizationContext: ['groups' => ['write_User','write_Study', 'write_Professor', 'write_Director']])]
 
 
-#[InheritanceType("JOINED_TABLE")]
+#[InheritanceType("JOINED")]
 #[DiscriminatorColumn(name: "status", type: "string")]
-#[DiscriminatorMap(["Student","Professor","Director"])]
+#[DiscriminatorMap(["student" => "Student", "professor" => "Professor", "director" => "Director"])]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
