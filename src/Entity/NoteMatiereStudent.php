@@ -18,7 +18,7 @@ class NoteMatiereStudent
     private $id;
 
     #[ORM\Column(type: 'decimal', precision: 4, scale: 2, nullable: true)]
-    #[Groups(['read_NoteMatiereStudent', 'write_NoteMatiereStudent'])]
+    #[Groups(['read_NoteMatiereStudent', 'write_NoteMatiereStudent', 'read_Student', 'write_Student'])]
     private $note;
 
     #[ORM\ManyToOne(targetEntity: Student::class, inversedBy: 'noteMatiereStudents')]

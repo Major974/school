@@ -19,11 +19,11 @@ class Student extends User
     private $sexe;
 
     #[ORM\Column(type: 'decimal', precision: 4, scale: 2, nullable: true)]
-    #[Groups(['read_Student', 'write_Student'])]
+    #[Groups(['read_Student'])]
     private $global_note;
 
     #[ORM\Column(type: 'array', nullable: true)]
-    #[Groups(['read_Student', 'write_Student'])]
+    #[Groups(['read_Student'])]
     private $note = [];
 
     #[ORM\ManyToOne(targetEntity: Study::class, inversedBy: 'student')]
@@ -35,7 +35,7 @@ class Student extends User
     private $mail_parent;
 
     #[ORM\OneToMany(mappedBy: 'student', targetEntity: NoteMatiereStudent::class)]
-    #[Groups(['read_Student', 'write_Student'])]
+    #[Groups(['read_Student'])]
     private $noteMatiereStudents;
 
     public function __construct()

@@ -19,7 +19,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 #[InheritanceType("JOINED")]
 #[DiscriminatorColumn(name: "status", type: "string")]
-#[DiscriminatorMap(["student" => "Student", "professor" => "Professor", "director" => "Director"])]
+#[DiscriminatorMap(["Student", "Professor", "Director", "User", "Study"])]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -33,7 +33,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $email;
 
     #[ORM\Column(type: 'json')]
-    #[Groups(['read_User', 'write_User', 'read_Study' , 'write_Study', 'read_Director', 'write_Director', 'read_Professor', 'write_Professor', 'read_Student' , 'write_Student'])]
+    #[Groups(['read_User', 'write_User', 'read_Study' , 'write_Study', 'read_Director', 'write_Director', 'read_Professor', 'write_Professor', 'read_Student'])]
     private $roles = [];
 
     #[ORM\Column(type: 'string')]
