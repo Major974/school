@@ -22,10 +22,6 @@ class Student extends User
     #[Groups(['read_Student'])]
     private $global_note;
 
-    #[ORM\Column(type: 'array', nullable: true)]
-    #[Groups(['read_Student'])]
-    private $note = [];
-
     #[ORM\ManyToOne(targetEntity: Study::class, inversedBy: 'student')]
     #[Groups(['read_Student', 'write_Student'])]
     private $Studyplace;
@@ -64,18 +60,6 @@ class Student extends User
     public function setGlobalNote(?string $global_note): self
     {
         $this->global_note = $global_note;
-
-        return $this;
-    }
-
-    public function getNote(): ?array
-    {
-        return $this->note;
-    }
-
-    public function setNote(?array $note): self
-    {
-        $this->note = $note;
 
         return $this;
     }
