@@ -25,27 +25,27 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
-    #[Groups(['read_User', 'write_User', 'read_Study' , 'write_Study', 'read_Director', 'write_Director', 'read_Professor', 'write_Professor', 'read_Student' , 'write_Student'])]
+    #[Groups(['read_User', 'write_User', 'read_Director', 'write_Director', 'read_Professor', 'write_Professor', 'read_Student' , 'write_Student'])]
     private $id;
 
     #[ORM\Column(type: 'string', length: 180, unique: true)]
-    #[Groups(['read_User', 'write_User', 'read_Study' , 'write_Study', 'read_Director', 'write_Director', 'read_Professor', 'write_Professor', 'read_Student' , 'write_Student'])]
+    #[Groups(['read_User', 'write_User', 'read_Director', 'write_Director', 'read_Professor', 'write_Professor', 'read_Student' , 'write_Student'])]
     private $email;
 
     #[ORM\Column(type: 'json')]
-    #[Groups(['read_User', 'write_User', 'read_Study' , 'write_Study', 'read_Director', 'write_Director', 'read_Professor', 'write_Professor', 'read_Student' , 'write_Student'])]
+    #[Groups(['read_User', 'write_User', 'read_Director', 'write_Director', 'read_Professor', 'write_Professor', 'read_Student' , 'write_Student'])]
     private $roles = [];
 
     #[ORM\Column(type: 'string')]
-    #[Groups(['read_User', 'write_User', 'read_Study' , 'write_Study', 'read_Director', 'write_Director', 'read_Professor', 'write_Professor', 'read_Student' , 'write_Student'])]
+    #[Groups(['read_User', 'write_User', 'read_Director', 'write_Director', 'read_Professor', 'write_Professor', 'read_Student' , 'write_Student'])]
     private $password;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Groups(['read_User', 'write_User', 'read_Study' , 'write_Study', 'read_Director', 'write_Director', 'read_Professor', 'write_Professor', 'read_Student' , 'write_Student'])]
+    #[Groups(['read_User', 'write_User', 'read_Director', 'write_Director', 'read_Professor', 'write_Professor', 'read_Student' , 'write_Student'])]
     private $firstname;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Groups(['read_User', 'write_User', 'read_Study' , 'write_Study', 'read_Director', 'write_Director', 'read_Professor', 'write_Professor', 'read_Student' , 'write_Student'])]
+    #[Groups(['read_User', 'write_User', 'read_Director', 'write_Director', 'read_Professor', 'write_Professor', 'read_Student' , 'write_Student'])]
     private $lastname;
 
     public function getFirstname(): ?string
