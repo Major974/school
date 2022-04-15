@@ -13,14 +13,22 @@ class MailerController extends AbstractController
     #[Route('/email')]
     public function sendEmail(MailerInterface $mailer): Response
     {
-        $email = (new Email())
-            ->from('alajitest1@pawolanmwen.com')
-            ->to('alajitest4@pawolanmwen.com')
+        // $email = (new Email())
+        //     ->from('alajitest1@pawolanmwen.com')
+        //     ->to('alajitest4@pawolanmwen.com')
             
-            ->subject('Time for Symfony Mailer!')
-            ->text('Sending emails is fun again!');
-        $this->$mailer->send($email);
+        //     ->subject('Time for Symfony Mailer!')
+        //     ->text('Sending emails is fun again!');
+        // $mailer->send($email);
 
-        // ...
+        $to      = 'alajitest3@pawolanmwen.com';
+        $subject = 'le sujet';
+        $message = 'Bonjour !';
+        mail($to, $subject, $message);
+        
+        $response = new Response();
+        return($response);
+     
+
+        }
     }
-}
